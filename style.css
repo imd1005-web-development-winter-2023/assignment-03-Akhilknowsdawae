@@ -14,8 +14,10 @@
   --colour-wedgewood: #457b9d;
   --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+  --daily: var(--colour-amaranth);
+  --monthly: var(--colour-wedgewood);
+
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
 
   /* Body configuration */
   --body-default-colour: var(--colour-cello);
@@ -31,13 +33,196 @@ body {
   background-color: var(--body-background-colour);
 }
 
-main {
-  min-height: 100vh;
+input[type="text"] {
+  appearance: none;
+  border:none;
+  outline:none;
+  background:none;
+}
 
+
+button{
+    appearance: none;
+    border:none;
+    outline:none;
+    background:none;
+    cursor: initial;
+}
+
+section{
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h3{
+  color: var(--colour-cello);
+  font-size: 100%;
+  font-weight: 10;
+  margin-bottom: 10px;
+}
+
+h4{
+  color: var(--colour-cello);
+  font-weight: bold;
+  margin-bottom:10px;
+}
+
+.cat_title .title {
+  display:flex;
+}
+
+.cat_title .title input {
+  margin-left: 10px;
+  flex: 1 1 0%;
+  min-width: 0;
+  color: #274875;
+}
+
+.create input[type="text"]{
+  display:flex;
+  width:100%;
+  font-size: 20px;
+  padding: 10px 17px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom:20px;
+}
+
+.create .options {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px;
+  grid-gap:15px;
+}
+
+.create .options label {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding:15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: var(--shadow)
+}
+
+input[type="radio"]{
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+.bubble {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:15px;
+  height:15px;
+  border-radius: 20%;
+  border: 2px solid var(--monthly);
+}
+
+.bubble.daily {
+  border-color: var(--daily);
+}
+
+.bubble::after{
+  content:"";
+  display:flex;
+  opacity:0px;
+  height:0px;
+  width: 0px;
+  background-color: var(--monthly);
+  border-radius: 20%;
+}
+
+.bubble.daily::after {
+  background-color: var(--daily);
+}
+
+input:checked ~ .bubble::after {
+  width: 9px;
+  height: 9px;
+  opacity: 1;
+}
+
+.create input[type="submit"]{
+  display:block;
+  width:100%;
+  font-size: 20px;
+  padding: 10px 17px;
+  background-color: var(--daily);
+  color:white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom:20px;
+  border: none;
+}
+
+.create input[type="submit"]:hover{
+  opacity:0.8;
+}
+
+.todo_list .todo-item{
+  display:flex;
+  align-items: center;
+  background-color: white;
+  padding:15px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 15px;
+}
+
+.todo-item label{
+  display:block;
+  margin-right: 13px;
+}
+
+.todo-item .todo-content {
+  flex: 1 1 0%;
+}
+
+.todo-item .todo-content input{
+  font-size:20px;
   align-items: center;
 }
+
+.todo-item .action{
+  display:flex;
+  align-items:center;
+}
+
+
+.todo-item .action button{
+  display:block;
+  padding:10px;
+  border-radius:7px;
+  color:white;
+}
+
+.todo-item .action .edit{
+  margin-right: 10px;
+  background-color: var(--monthly);
+}
+
+.todo-item .action .delete{
+  margin-right: 10px;
+  background-color: var(--daily);
+}
+
+.todo-item .action button:hover{
+  opacity:0.8;
+}
+
+.todo-item.done .todo-content input{
+  text-decoration: line-through;
+  color:rgb(100, 99, 99);
+}
+
 
 /*
   Screen reader text utility class

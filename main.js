@@ -9,7 +9,7 @@
 
 // Constants
 const appID = "app";
-const headingText = "To do. To done. ✅";
+const maxLength = 100; //Max input length (100 chars)
 
 // Variables
 
