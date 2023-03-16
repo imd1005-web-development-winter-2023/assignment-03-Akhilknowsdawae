@@ -27,37 +27,14 @@
     -->
     <main>
       <div id="app">
-        <section class="cat_title">
-          <h2 class="title">
-            To-do-list for: <input type="text" id="name" placeholder="Cat Name here">
-          </h2>
-        </section>
         <section class="create">
 
-          <h3>CREATE A TODO</h3>
+          <h2>CREATE A TODO</h2>
 
           <form id="new-todo">
             <h4>What's on the todo</h4>
 
             <input type="text" name="content" id="content" placeholder="e.g. chase a toy">
-
-            <h4>Pick a category</h4>
-
-            <div class="options">
-
-              <label>
-                <input type="radio" name="category" id="catergory1" value="daily">
-                <span class="bubble daily"></span>
-                <div>Daily</div>
-              </label>
-
-              <label>
-                <input type="radio" name="category" id="catergory2" value="monthly">
-                <span class="bubble monthly"></span>
-                <div>Monthly</div>
-              </label>
-
-            </div>
 
             <input type="submit" value="Add">
 
@@ -70,11 +47,10 @@
           
           <div class="list" id="todo-list">
 
-            <!-- Test1 -->
-            <div class="todo-item done">
+            <div class="todo-item ">
               <label>
                 <input type="checkbox">
-                <span class="bubble daily"></span>
+                <span class="bubble"></span>
               </label>
               
               <div class="todo-content">
@@ -87,11 +63,10 @@
               </div>
             </div>
 
-            <!-- Test2 -->
             <div class="todo-item ">
               <label>
                 <input type="checkbox">
-                <span class="bubble monthly"></span>
+                <span class="bubble"></span>
               </label>
               
               <div class="todo-content">

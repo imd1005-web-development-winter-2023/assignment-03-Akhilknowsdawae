@@ -9,10 +9,8 @@
 
 // Constants
 const appID = "app";
-const maxLength = 100; //Max input length (100 chars)
-
-// Variables
-
+const newTodoForm = document.querySelector('#new-todo')
+const Todolist = document.querySelector('')
 // DOM Elements
 let appContainer = document.getElementById(appID);
 
@@ -37,8 +35,11 @@ function inititialise() {
   console.log("App successfully initialised");
 }
 
+
+
 //
 // Inits & Event Listeners
 //
 
 inititialise();
+
