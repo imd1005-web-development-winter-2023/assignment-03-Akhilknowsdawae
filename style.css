@@ -80,19 +80,18 @@ h4{
   margin-bottom:20px;
 }
 
-input[type="radio"]{
-  display: none;
-}
 input[type="checkbox"]{
   display: none;
 }
+
+/* - - - - - - - -- - - - -- - - - -- - - */
 
 .bubble {
   display:flex;
   align-items: center;
   justify-content: center;
-  width:16px;
-  height:16px;
+  width:20px;
+  height:20px;
   border-radius: 20%;
   border: 2.5px solid var(--daily);
 }
@@ -104,12 +103,12 @@ input[type="checkbox"]{
   height:0px;
   width: 0px;
   background-color: var(--daily);
-  border-radius: 20%;
+  border-radius: 30%;
 }
 
 input:checked ~ .bubble::after {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   opacity: 1;
 }
 
