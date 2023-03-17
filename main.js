@@ -9,37 +9,61 @@
 
 // Constants
 const appID = "app";
-const newTodoForm = document.querySelector('#new-todo')
-const Todolist = document.querySelector('')
+const todos = [];
+const todoList = document.querySelector(".todo-list");
+const todoForm = document.querySelector(".new-todo");
+const todoName = document.querySelector("#content");
+const create_btn_el = document.getElementById("create");
+
 // DOM Elements
 let appContainer = document.getElementById(appID);
 
 //
 // Functions
 //
-
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
-
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
+function addItem(e) {
+  e.preventDefault();
+  const name = todoName.value;
+  todos.push(name);
+  renderList(todos,todoList);
+  todoForm.reset();
 }
 
+/* 
 
+<li class="todo-item">
+  <label>
+    <input type="checkbox">
+    <span class="bubble"></span>
+  </label>
+  
+  <div class="todo-content">
+    <input type="text" value="Feed the cat" readonly>
+  </div>
+
+  <div class="action">
+    <button class="edit">Edit</button>
+    <button class="delete">Delete</button>
+  </div>
+</li> 
+
+*/
+
+function renderList(items, itemsList) {
+  while (itemsList.firstChild) {
+    itemsList.removeChild(itemsList.firstChild);
+  }
+
+  for(let i=0; i<items.length; i++){
+    const listItem = document.createElement("li");
+    listItem.textContent = items[i];
+    itemsList.appendChild(listItem);
+  }
+}
 
 //
 // Inits & Event Listeners
 //
+todoForm.addEventListener("submit",addItem);
 
-inititialise();
-
+renderList(todos, todoList);
