@@ -80,8 +80,10 @@ function DisplayTodos() {
 
     label.appendChild(input);
     label.appendChild(span);
+    
     actions.appendChild(edit);
     actions.appendChild(deletebutton);
+
     todoItem.appendChild(label);
     todoItem.appendChild(content);
     todoItem.appendChild(actions);
