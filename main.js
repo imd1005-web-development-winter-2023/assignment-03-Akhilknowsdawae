@@ -28,10 +28,7 @@ let appContainer = document.getElementById(appID);
 
 function addItem(e) {
   e.preventDefault();
-  const todo = {
-    content: e.target.elements.content.value,
-    done: false
-  }
+  const todo = e.target.elements.content.value;
   console.log("hi i am here at addItem", todos);
   todos.push(todo);
   console.log("hi i am here at addItem", todos);
@@ -47,7 +44,7 @@ function addItem(e) {
     </label>
               
     <div class="todo-content">
-      <input type="text" value="Feed the cat" readonly>
+      <button> yadayada </button>
     </div>
 
     <div class="action">
@@ -65,37 +62,36 @@ function DisplayTodos(items, itemsList) {
   console.log("hi i am here at DisplayTodos", todos);
   for (let i = 0; i < items.length; i++) {
     const todoItem = document.createElement("li");
+
     const label = document.createElement("label");
     const input = document.createElement("input");
     const span = document.createElement("span");
     const content = document.createElement("div");
     const actions = document.createElement("div");
-    const edit = document.createElement("button");
     const deletebutton = document.createElement("button");
-  
+    const contentdisplay = document.createElement("button");
+
+
     todoItem.classList.add("todo-item");
-    todoItem.textContent = JSON.stringify(todos[i]);
-
-
     content.classList.add("todo-content");
     actions.classList.add("action");
+    input.type="checkbox";
+    span.classList.add("bubble");
+
     todoItem.appendChild(label);
     todoItem.appendChild(content);
     todoItem.appendChild(actions);
 
-    itemsList.appendChild(todoItem);
-     /*
-    content.appendChild(content);
-    actions.appendChild(edit);
-    actions.appendChild(deletebutton);
+    content.appendChild(contentdisplay);
+    contentdisplay.textContent=items[i];
+
     label.appendChild(input);
     label.appendChild(span);
 
-    span.classList.add("bubble");
+    actions.appendChild(deletebutton);
 
-    label.input.type = "checkbox";
-    label.input.checked = todos.done;
-*/
+
+    itemsList.appendChild(todoItem);
   }
   /*
     const todoItem = document.createElement("li");
@@ -154,17 +150,6 @@ function DisplayTodos(items, itemsList) {
       }
       console.log("hi i am here at DisplayTodos", todos);
       DisplayTodos();
-    })
-
-    edit.addEventListener("click", e=>{
-      const input = content.querySelector("input");
-      input.removeAttribute("readonly");
-      input.focus();
-      input.addEventListener("blur", e=>{
-        input.setAttribute("readonly", true);
-        todo.content = e.target.value;
-        DisplayTodos();
-      })
     })
 
     deletebutton.addEventListener("click", e=>{
