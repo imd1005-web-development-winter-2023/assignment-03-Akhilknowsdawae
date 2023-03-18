@@ -79,7 +79,7 @@ function DisplayTodos() {
     content.classList.add("todo-content");
     actions.classList.add("actions");
     edit.classList.add("edit");
-    deletebutton.classList.add("delete");
+    deletebutton.classList.add("deletebutton");
 
     label.appendChild(input);
     label.appendChild(span);
