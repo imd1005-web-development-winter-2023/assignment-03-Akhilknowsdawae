@@ -11,7 +11,7 @@
 const appID = "app";
 
 const todos = [];
-const todoList = document.querySelector(".todo-list");
+const todoList = document.querySelector("#todo-list");
 const todoForm = document.querySelector("#new-todo");
 const todoName = document.querySelector("#content");
 const add_btn = document.getElementById("createbutton");
@@ -50,14 +50,14 @@ function addItem(e) {
     content: e.target.elements.content.value,
     done: false
   }
-  todos.push(todo);
   console.log("hi i am here at addItem", todos);
   todoForm.reset();
+  todos.push(todo);
   DisplayTodos();
 }
 
 function DisplayTodos() {
-  const todoList = document.querySelector(".todo-list");
+  const todoList = document.querySelector("#todo-list");
   todos.forEach(todo =>{
     const todoItem = document.createElement("div");
     todoItem.classList.add("todo-item")
