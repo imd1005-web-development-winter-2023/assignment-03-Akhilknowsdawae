@@ -81,11 +81,39 @@ function DisplayTodos(items, itemsList) {
 
   const todoList = document.querySelector("#todo-list");
   console.log("hi i am here at DisplayTodos", todos);
-  for (let i=0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
     const todoItem = document.createElement("li");
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    const span = document.createElement("span");
+    const content = document.createElement("div");
+    const actions = document.createElement("div");
+    const edit = document.createElement("button");
+    const deletebutton = document.createElement("button");
+  
     todoItem.classList.add("todo-item");
-    todoItem.textContent = "Help me pls";
+    todoItem.textContent = todos[i];
+
+
+    content.classList.add("todo-content");
+    actions.classList.add("action");
+    todoItem.appendChild(label);
+    todoItem.appendChild(content);
+    todoItem.appendChild(actions);
+
     itemsList.appendChild(todoItem);
+     /*
+    content.appendChild(content);
+    actions.appendChild(edit);
+    actions.appendChild(deletebutton);
+    label.appendChild(input);
+    label.appendChild(span);
+
+    span.classList.add("bubble");
+
+    label.input.type = "checkbox";
+    label.input.checked = todos.done;
+*/
   }
   /*
     const todoItem = document.createElement("li");
