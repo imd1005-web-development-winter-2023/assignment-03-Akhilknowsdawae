@@ -51,6 +51,7 @@ function addItem(e) {
     done: false
   }
   todos.push(todo);
+  console.log("hi i am here at addItem", todos);
   todoForm.reset();
   DisplayTodos();
 }
@@ -69,6 +70,8 @@ function DisplayTodos() {
     const edit = document.createElement("button");
     const deletebutton = document.createElement("button");
 
+    console.log("hi i am here at DisplayTodos", todos);
+
     input.type = "checkbox";
     input.checked = todo.done;
     span.classList.add("bubble");
@@ -81,14 +84,20 @@ function DisplayTodos() {
     label.appendChild(input);
     label.appendChild(span);
     
+    console.log("hi i am here at DisplayTodos", todos);
+
     actions.appendChild(edit);
     actions.appendChild(deletebutton);
+
+    console.log("hi i am here at DisplayTodos", todos);
 
     todoItem.appendChild(label);
     todoItem.appendChild(content);
     todoItem.appendChild(actions);
 
     todoList.appendChild(todoItem);
+
+    console.log("hi i am here at DisplayTodos", todos);
 
     if(todo.done){
       todoItem.classList.add("done");
