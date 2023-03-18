@@ -166,11 +166,6 @@ input:checked ~ .bubble::after {
   color:white;
 }
 
-.todo-item .action .edit{
-  margin-right: 10px;
-  background-color: var(--monthly);
-}
-
 .todo-item .action .deletebutton{
   margin-right: 10px;
   background-color: var(--daily);
@@ -180,7 +175,7 @@ input:checked ~ .bubble::after {
   opacity:0.8;
 }
 
-.todo-item.done .todo-content input{
+.todo-item.done .todo-content button{
   text-decoration: line-through;
   color:rgb(100, 99, 99);
 }
