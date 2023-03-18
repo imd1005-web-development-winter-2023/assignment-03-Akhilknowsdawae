@@ -74,11 +74,17 @@ function addItem(e) {
     </div>
   </li> */
 function DisplayTodos(items, itemsList) {
+
+  while (itemsList.firstChild) {
+    itemsList.removeChild(itemsList.firstChild);
+  }
+
   const todoList = document.querySelector("#todo-list");
   console.log("hi i am here at DisplayTodos", todos);
   for (let i=0; i < items.length; i++) {
     const todoItem = document.createElement("li");
     todoItem.classList.add("todo-item");
+    todoItem.textContent = "Help me pls";
   }
   /* todos.forEach(todo =>{
     const todoItem = document.createElement("li");
