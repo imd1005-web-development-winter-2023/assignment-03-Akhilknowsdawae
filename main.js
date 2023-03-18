@@ -85,8 +85,9 @@ function DisplayTodos(items, itemsList) {
     const todoItem = document.createElement("li");
     todoItem.classList.add("todo-item");
     todoItem.textContent = "Help me pls";
+    itemsList.appendChild(todoItem);
   }
-  /* todos.forEach(todo =>{
+  /*
     const todoItem = document.createElement("li");
     todoItem.classList.add("todo-item")
 
