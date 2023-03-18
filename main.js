@@ -51,15 +51,37 @@ function addItem(e) {
     done: false
   }
   console.log("hi i am here at addItem", todos);
-  todoForm.reset();
   todos.push(todo);
-  DisplayTodos();
+  console.log("hi i am here at addItem", todos);
+  DisplayTodos(todos,todoList);
+  console.log("hi i am here at addItem", todos);
+  todoForm.reset();
 }
 
-function DisplayTodos() {
+/* <li class="todo-item">
+    <label>
+      <input type="checkbox">
+      <span class="bubble"></span>
+    </label>
+              
+    <div class="todo-content">
+      <input type="text" value="Feed the cat" readonly>
+    </div>
+
+    <div class="action">
+      <button class="edit">Edit</button>
+      <button class="deletebutton">Delete</button>
+    </div>
+  </li> */
+function DisplayTodos(items, itemsList) {
   const todoList = document.querySelector("#todo-list");
-  todos.forEach(todo =>{
-    const todoItem = document.createElement("div");
+  console.log("hi i am here at DisplayTodos", todos);
+  for (let i=0; i < items.length; i++) {
+    const todoItem = document.createElement("li");
+    todoItem.classList.add("todo-item");
+  }
+  /* todos.forEach(todo =>{
+    const todoItem = document.createElement("li");
     todoItem.classList.add("todo-item")
 
     const label = document.createElement("label");
@@ -132,7 +154,7 @@ function DisplayTodos() {
       todos = todos.filter(t => t != todo);
       DisplayTodos();
       })
-  })
+  }) */
 }
 
 //
