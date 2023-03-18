@@ -24,25 +24,7 @@ let appContainer = document.getElementById(appID);
 //
 // Functions
 //
-/* 
 
-<div class="todo-item">
-  <label>
-    <input type="checkbox">
-    <span class="bubble"></span>
-  </label>
-  
-  <div class="todo-content">
-    <input type="text" value="Feed the cat" readonly>
-  </div>
-
-  <div class="action">
-    <button class="edit">Edit</button>
-    <button class="deletebutton">Delete</button>
-  </div>
-</div> 
-
-*/
 
 function addItem(e) {
   e.preventDefault();
@@ -92,7 +74,7 @@ function DisplayTodos(items, itemsList) {
     const deletebutton = document.createElement("button");
   
     todoItem.classList.add("todo-item");
-    todoItem.textContent = todos[i];
+    todoItem.textContent = JSON.stringify(todos[i]);
 
 
     content.classList.add("todo-content");
