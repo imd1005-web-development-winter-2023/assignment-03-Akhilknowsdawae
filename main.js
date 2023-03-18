@@ -12,7 +12,7 @@ const appID = "app";
 
 const todos = [];
 const todoList = document.querySelector(".todo-list");
-const todoForm = document.querySelector(".new-todo");
+const todoForm = document.querySelector("#new-todo");
 const todoName = document.querySelector("#content");
 const add_btn = document.getElementById("createbutton");
 
@@ -103,6 +103,8 @@ function DisplayTodos() {
       todoItem.classList.add("done");
     }
 
+    console.log("hi i am here at DisplayTodos", todos);
+
     input.addEventListener("click", e=>{
       todo.done = e.target.checked;
 
@@ -111,7 +113,7 @@ function DisplayTodos() {
       } else {
         todoItem.classList.remove("done");
       }
-
+      console.log("hi i am here at DisplayTodos", todos);
       DisplayTodos();
     })
 
