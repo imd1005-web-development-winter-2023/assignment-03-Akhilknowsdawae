@@ -77,6 +77,7 @@ function DisplayTodos(items, itemsList) {
     content.classList.add("todo-content");
     actions.classList.add("action");
     input.type="checkbox";
+    input.id="checkbox";
     span.classList.add("bubble");
     deletebutton.classList.add("deletebutton");
     deletebutton.id="delete";
@@ -95,14 +96,13 @@ function DisplayTodos(items, itemsList) {
     actions.appendChild(deletebutton);
     itemsList.appendChild(todoItem);
 
-    var checkbox = (todoItem.input[type=checkbox]);
-    checkbox.addEventListener("click", e=>{
-      if(input.checked = true) {
+    let checkbox = document.getElementById("checkbox");
+    checkbox.addEventListener("change", () =>{
+      if(input.checked) {
         todoItem.classList.add("done");
       } else {
         todoItem.classList.remove("done");
       }
-      console.log("hi i am here at DisplayTodos", todos);
       DisplayTodos();
     })
 }
