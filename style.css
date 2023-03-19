@@ -93,7 +93,7 @@ input[type="checkbox"]{
   width:20px;
   height:20px;
   border-radius: 20%;
-  border: 2.5px solid var(--daily);
+  border: 3px solid var(--daily);
 }
 
 .bubble::after{
@@ -103,7 +103,7 @@ input[type="checkbox"]{
   height:0px;
   width: 0px;
   background-color: var(--daily);
-  border-radius: 30%;
+  border-radius:20%;
 }
 
 input:checked ~ .bubble::after {
