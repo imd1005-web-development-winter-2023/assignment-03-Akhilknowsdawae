@@ -87,13 +87,24 @@ function DisplayTodos(items, itemsList) {
     todoItem.appendChild(actions);
 
     content.appendChild(contentdisplay);
-    contentdisplay.textContent = todos[i]; 
+    contentdisplay.textContent = todos[i];
 
     label.appendChild(input);
     label.appendChild(span);
 
     actions.appendChild(deletebutton);
     itemsList.appendChild(todoItem);
+
+    var checkbox = (todoItem.input[type=checkbox]);
+    checkbox.addEventListener("click", e=>{
+      if(input.checked = true) {
+        todoItem.classList.add("done");
+      } else {
+        todoItem.classList.remove("done");
+      }
+      console.log("hi i am here at DisplayTodos", todos);
+      DisplayTodos();
+    })
 }
   /*
     if(todo.done){
