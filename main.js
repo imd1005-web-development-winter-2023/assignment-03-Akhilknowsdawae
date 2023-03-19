@@ -52,7 +52,8 @@ function addItem(e) {
     </div>
   </li> */
 
-  
+
+
 function DisplayTodos(items, itemsList) {
 
   while (itemsList.firstChild) {
@@ -78,6 +79,7 @@ function DisplayTodos(items, itemsList) {
     input.type="checkbox";
     span.classList.add("bubble");
     deletebutton.classList.add("deletebutton");
+    deletebutton.id="delete";
     deletebutton.textContent = "Delete";
 
     todoItem.appendChild(label);
