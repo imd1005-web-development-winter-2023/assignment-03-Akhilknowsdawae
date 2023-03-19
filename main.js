@@ -30,9 +30,7 @@ function addItem(e) {
   const todo = e.target.elements.content.value;
   console.log("hi i am here at addItem", todos);
   todos.push(todo);
-  console.log("hi i am here at addItem", todos);
   DisplayTodos(todos,todoList);
-  console.log("hi i am here at addItem", todos);
   todoForm.reset();
 }
 
@@ -59,8 +57,9 @@ function DisplayTodos(items, itemsList) {
   while (itemsList.firstChild) {
     itemsList.removeChild(itemsList.firstChild);
   }
-  const todoList = document.querySelector("#todo-list");
+  
   console.log("hi i am here at DisplayTodos", todos);
+
   for (let i = 0; i < items.length; i++) {
     const todoItem = document.createElement("li");
 
@@ -107,8 +106,9 @@ function DisplayTodos(items, itemsList) {
       DisplayTodos();
     })
 
-    deletebutton.addEventListener("click", e=>{
-      todos = todos.filter(t => t != todos);
+    let deletelist = document.getElementById("delete");
+    deletelist.addEventListener("click", () =>{
+      todos.splice(i,1);
       DisplayTodos();
     })
 }
@@ -142,3 +142,4 @@ function DisplayTodos(items, itemsList) {
 // Inits & Event Listeners
 //
 todoForm.addEventListener("submit",addItem);
+addEventListener("click", listClickHander);
