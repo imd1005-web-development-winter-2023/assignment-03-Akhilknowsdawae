@@ -25,7 +25,6 @@ let appContainer = document.getElementById(appID);
 // Functions
 //
 
-
 function addItem(e) {
   e.preventDefault();
   const todo = e.target.elements.content.value;
@@ -52,12 +51,13 @@ function addItem(e) {
       <button class="deletebutton">Delete</button>
     </div>
   </li> */
+
+  
 function DisplayTodos(items, itemsList) {
 
   while (itemsList.firstChild) {
     itemsList.removeChild(itemsList.firstChild);
   }
-
   const todoList = document.querySelector("#todo-list");
   console.log("hi i am here at DisplayTodos", todos);
   for (let i = 0; i < items.length; i++) {
@@ -77,63 +77,23 @@ function DisplayTodos(items, itemsList) {
     actions.classList.add("action");
     input.type="checkbox";
     span.classList.add("bubble");
+    deletebutton.classList.add("deletebutton");
+    deletebutton.textContent = "Delete";
 
     todoItem.appendChild(label);
     todoItem.appendChild(content);
     todoItem.appendChild(actions);
 
     content.appendChild(contentdisplay);
-    contentdisplay.textContent=items[i];
+    contentdisplay.textContent = todos[i]; 
 
     label.appendChild(input);
     label.appendChild(span);
 
     actions.appendChild(deletebutton);
-
-
     itemsList.appendChild(todoItem);
-  }
+}
   /*
-    const todoItem = document.createElement("li");
-    todoItem.classList.add("todo-item")
-
-    const label = document.createElement("label");
-    const input = document.createElement("input");
-    const span = document.createElement("span");
-    const content = document.createElement("div");
-    const actions = document.createElement("div");
-    const edit = document.createElement("button");
-    const deletebutton = document.createElement("button");
-
-    console.log("hi i am here at DisplayTodos", todos);
-
-    input.type = "checkbox";
-    input.checked = todo.done;
-    span.classList.add("bubble");
-
-    content.classList.add("todo-content");
-    actions.classList.add("actions");
-    edit.classList.add("edit");
-    deletebutton.classList.add("deletebutton");
-
-    label.appendChild(input);
-    label.appendChild(span);
-    
-    console.log("hi i am here at DisplayTodos", todos);
-
-    actions.appendChild(edit);
-    actions.appendChild(deletebutton);
-
-    console.log("hi i am here at DisplayTodos", todos);
-
-    todoItem.appendChild(label);
-    todoItem.appendChild(content);
-    todoItem.appendChild(actions);
-
-    todoList.appendChild(todoItem);
-
-    console.log("hi i am here at DisplayTodos", todos);
-
     if(todo.done){
       todoItem.classList.add("done");
     }
