@@ -81,6 +81,7 @@ function DisplayTodos(items, itemsList) {
     span.classList.add("bubble");
     deletebutton.classList.add("deletebutton");
     deletebutton.id="delete";
+    deletebutton.button="button";
     deletebutton.textContent = "Delete";
 
     todoItem.appendChild(label);
@@ -103,6 +104,11 @@ function DisplayTodos(items, itemsList) {
       } else {
         todoItem.classList.remove("done");
       }
+      DisplayTodos();
+    })
+
+    deletebutton.addEventListener("click", e=>{
+      todos = todos.filter(t => t != todos);
       DisplayTodos();
     })
 }
