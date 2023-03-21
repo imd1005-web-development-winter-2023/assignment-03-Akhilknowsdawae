@@ -148,7 +148,7 @@ input:checked ~ .bubble::after {
   flex: 1 1 0%;
 }
 
-.todo-item .todo-content input{
+.todo-item .todo-content button{
   font-size:20px;
   align-items: center;
 }
